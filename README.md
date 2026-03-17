@@ -1,6 +1,3 @@
-
-
-
 # 仿淘宝电商商城系统 🛒
 
 一个基于 Django + MySQL + Redis 的 B2C 电商平台，实现了用户认证、商品管理、购物车、订单、支付五大核心模块。本项目是个人后端开发的实战项目，旨在通过完整电商流程掌握企业级开发技术栈。
@@ -10,8 +7,6 @@
 ## 📋 项目简介
 
 本项目从0到1独立开发，模拟淘宝核心交易流程，涵盖电商系统的典型业务场景。通过本项目的实践，深入理解了**高并发处理、缓存优化、异步任务、RESTful API设计**等后端核心技术。
-
-**在线演示**：（如果有部署可以放链接，没有就删掉这行）
 
 ---
 
@@ -103,22 +98,50 @@
 ```
 taobao-ecommerce/
 ├── manage.py
-├── taobao/                # 项目主配置
+├── dashopt/                # 项目主配置
+│   ├── __init__.py
 │   ├── settings.py
 │   ├── urls.py
-│   └── celery.py          # Celery配置
-├── apps/                  # 所有应用
-│   ├── users/             # 用户模块
-│   ├── goods/             # 商品模块
-│   ├── cart/              # 购物车模块
-│   ├── orders/            # 订单模块
-│   └── address/           # 地址管理
+│   └── celery.py      # Celery配置
+│   └── ...              
+│── users/             # 用户模块
+│   ├── __init__.py
+│   ├── apps.py
+│   ├── urls.py
+│   ├── view.py
+│   └── models.py      # 数据管理
+│   └── ...      
+│── goods/             # 商品模块
+│   ├── __init__.py
+│   ├── apps.py
+│   ├── urls.py
+│   ├── view.py
+│   └── models.py      # 数据管理
+│   └── ...      
+│── carts/              # 购物车模块
+│   ├── __init__.py
+│   ├── apps.py
+│   ├── urls.py
+│   ├── view.py
+│   └── models.py      # 数据管理
+│   └── ...      
+│── orders/            # 订单模块
+│   ├── __init__.py
+│   ├── apps.py
+│   ├── urls.py
+│   ├── view.py
+│   └── models.py      # 数据管理
+│   └── ...      
 ├── utils/                 # 工具包
+│   ├── __init__.py
+│   ├── basemodel.py
+│   ├── baseview.py
+│   ├── cache_dec.py
+│   ├── sms.py
 │   ├── logging_dec.py     # token校验装饰器
 │   └── ...
-├── static/                # 静态文件
 ├── media/                 # 媒体文件
-├── requirements.txt       # 依赖列表
+│   └── ...
 └── README.md
 ```
 
@@ -127,10 +150,10 @@ taobao-ecommerce/
 ## 🚦 如何运行
 
 ### 环境要求
-- Python 3.8+
+- Python 3.6+
 - MySQL 5.7+
-- Redis 6.0+
-- Nginx（可选）
+- Redis 3.5.3
+- Nginx 
 
 ### 安装步骤
 
@@ -189,33 +212,11 @@ taobao-ecommerce/
 
 ---
 
-## 📸 项目截图
-
-（建议放2-3张截图，比如商品列表页、购物车页面、订单页面。截图可以直接拖进这个文件夹，然后用以下格式引用）
 
 ```
 ![商品列表页](screenshots/goods_list.png)
 ```
 
----
-
-## 🔮 待优化/扩展功能
-
-- [ ] 接入支付宝沙箱支付
-- [ ] 商品搜索功能（Elasticsearch）
-- [ ] 秒杀活动模块
-- [ ] 单元测试覆盖率提升
-- [ ] Docker容器化部署
-
----
-
-## 📬 联系我
-
-- GitHub：[@你的用户名](https://github.com/你的用户名)
-- 邮箱：2108705337@qq.com
-- 博客：（如果有可以放链接）
-
----
 
 ## ⚠️ 注意事项
 
@@ -232,31 +233,6 @@ taobao-ecommerce/
 
 ---
 
-📌 使用说明
-
-1. 复制以上内容，在项目根目录新建 README.md 文件，粘贴进去
-2. 替换占位符：
-   · 你的用户名 → 你的GitHub用户名（illustrate1）
-   · 邮箱、博客等个人信息按实际情况填写
-3. 添加截图（强烈推荐）：
-   · 在项目根目录新建 screenshots 文件夹
-   · 运行项目，截几张关键页面（商品列表、购物车、订单）
-   · 放入文件夹，按上面的格式引用
-4. 提交到GitHub：
-   ```bash
-   git add README.md screenshots/
-   git commit -m "添加项目README文档和截图"
-   git push
-   ```
-
----
-
-✨ 这个README的亮点
-
-1. 结构清晰：目录导航让面试官快速找到想看的部分
-2. 技术栈表格：一目了然展示你用了哪些技术
-3. 核心功能模块化：按用户、商品、订单等分类，逻辑清楚
-4. 项目亮点单独列出：直接向面试官展示你的技术深度
 5. 运行步骤详细：体现工程化思维，方便别人复现
 6. 待优化功能：展示你对项目的规划和思考，不止于完成
 
