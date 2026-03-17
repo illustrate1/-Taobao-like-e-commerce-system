@@ -221,21 +221,21 @@ CACHES = {
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend' # 固定写法
 EMAIL_HOST = 'smtp.qq.com' # 腾讯QQ邮箱 SMTP 服务器地址
 EMAIL_PORT = 25  # SMTP服务的端口号
-EMAIL_HOST_USER = '2108705337@qq.com'  # 发送邮件的QQ邮箱
-EMAIL_HOST_PASSWORD = 'fzcfphugyoyscggc'  # 在QQ邮箱->设置->帐户->“POP3/IMAP......服务” 里得到的在第三方登录QQ邮箱授权码
+EMAIL_HOST_USER = '2108705336@qq.com'  # 发送邮件的QQ邮箱
+EMAIL_HOST_PASSWORD = '...'  # 在QQ邮箱->设置->帐户->“POP3/IMAP......服务” 里得到的在第三方登录QQ邮箱授权码
 EMAIL_USE_TLS = True  # 与SMTP服务器通信时，是否启动TLS链接(安全链接)默认false
 
 # 发送短信配置
 SMS_CONFIG =  {
         "account_sid": "2c94811c8cd4da0a018de9c1e38e2846",
-        "auth_token": "bda67c0e3e524c8181efd9de24fd1e74",
+        "auth_token": "",
         "app_id": "2c94811c8cd4da0a018de9c1e51c284d",
         "template_id": "1",
     }
 # 微博登录配置
 WEIBO_CONFIG =  {
         "app_key": "860863778",
-        "app_secret": "85efa0eaeebfcf833d74cc97d055963b",
+        "app_secret": "",
         "redirect_uri": "http://localhost:7000/dadashop/templates/callback.html",
     }
 
