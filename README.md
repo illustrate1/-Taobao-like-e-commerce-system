@@ -150,6 +150,7 @@ taobao-ecommerce/
 ## 🚦 如何运行
 
 ### 环境要求
+- Linux环境运行
 - Python 3.6+
 - MySQL 5.7+
 - Redis 3.5.3
@@ -159,26 +160,20 @@ taobao-ecommerce/
 
 1. **克隆仓库**
    ```bash
-   git clone git@github.com:你的用户名/taobao-ecommerce.git
+   git clone git@github.com:illustrate1/taobao-ecommerce.git
    cd taobao-ecommerce
    ```
 
 2. **创建虚拟环境并安装依赖**
-   ```bash
-   python -m venv venv
-   source venv/bin/activate  # Linux/Mac
-   venv\Scripts\activate     # Windows
-   pip install -r requirements.txt
-   ```
 
 3. **配置数据库**
-   - 创建MySQL数据库（如 `taobao_db`）
-   - 修改 `taobao/settings.py` 中的数据库配置：
+   - 创建MySQL数据库
+   - 修改 `settings.py` 中的数据库配置：
      ```python
      DATABASES = {
          'default': {
              'ENGINE': 'django.db.backends.mysql',
-             'NAME': 'taobao_db',
+             'NAME': '',
              'USER': 'your_user',
              'PASSWORD': 'your_password',
              'HOST': 'localhost',
@@ -186,6 +181,7 @@ taobao-ecommerce/
          }
      }
      ```
+      - 修改 `settings.py` 中邮箱发送的SMS配置参数（填你自己的）
 
 4. **配置Redis**
    - 确保Redis服务已启动
@@ -219,9 +215,8 @@ taobao-ecommerce/
 
 
 ## ⚠️ 注意事项
-
+- 此说明文档为大致过程，细节部分需要自己配置（如发送邮箱sms参数，微博认证token获取）
 - 本项目为个人学习实战项目，仅供学习和参考
-- 如使用本项目的代码，请保留原作者信息
 - 敏感配置（SECRET_KEY、数据库密码）建议使用环境变量
 
 ---
@@ -234,8 +229,5 @@ taobao-ecommerce/
 ---
 
 5. 运行步骤详细：体现工程化思维，方便别人复现
-6. 待优化功能：展示你对项目的规划和思考，不止于完成
 
 ---
-
-如果需要我帮你针对其他项目（代理IP池、蜜雪冰城等）写README，随时告诉我！
